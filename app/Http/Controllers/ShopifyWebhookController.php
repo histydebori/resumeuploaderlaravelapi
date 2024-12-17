@@ -21,7 +21,7 @@ class ShopifyWebhookController extends Controller
         
         // Shopify includes the HMAC signature in the header for validation
         $shopifyHmac = $request->header('X-Shopify-Hmac-Sha256');
-        $shopifySecret = env('0ec3d3ae26cb6aa9bf5e206c14244efda0ed4eeef45cda86ada882192ff4e8da');  // Make sure to add your secret in .env file
+        $shopifySecret = env('1f25d5b780924fa3e540395d76c5b2f568235f30fbb92b4d2514dfc7ee053051');  // Make sure to add your secret in .env file
 
         // Verify the HMAC signature to ensure the request is from Shopify
         $calculatedHmac = base64_encode(hash_hmac('sha256', $orderData, $shopifySecret, true));
