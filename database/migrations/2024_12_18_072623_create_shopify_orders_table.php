@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('cancel_reason')->nullable();
             $table->timestamp('cancelled_at')->nullable();
             $table->string('contact_email');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamp('created_ats')->nullable();
             $table->string('currency');
             $table->decimal('current_total_price', 8, 2);
             $table->decimal('current_total_tax', 8, 2);
@@ -38,7 +38,7 @@ return new class extends Migration
             $table->decimal('total_tax', 8, 2);
             $table->decimal('total_tip_received', 8, 2);
             $table->decimal('total_weight', 8, 2);
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('updated_ats')->nullable();
 
             // Add customer information (e.g., customer name, address)
             $table->string('customer_first_name');

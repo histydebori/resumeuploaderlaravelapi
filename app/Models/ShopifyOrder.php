@@ -15,7 +15,7 @@ class ShopifyOrder extends Model
         'cancel_reason',
         'cancelled_at',
         'contact_email',
-        'created_at',
+        'created_ats',
         'currency',
         'current_total_price',
         'current_total_tax',
@@ -37,7 +37,7 @@ class ShopifyOrder extends Model
         'total_tax',
         'total_tip_received',
         'total_weight',
-        'updated_at',
+        'updated_ats',
         'customer_first_name',
         'customer_last_name',
         'customer_email',
@@ -51,9 +51,9 @@ class ShopifyOrder extends Model
     ];
 
     protected $casts = [
-        'created_at' => 'datetime',
+        'created_ats' => 'datetime',
         'cancelled_at' => 'datetime',
         'processed_at' => 'datetime',
-        'updated_at' => 'datetime',
+        'updated_ats' => 'datetime',
     ];
 }
