@@ -16,3 +16,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/resume', [CandidateProfileController::class, 'profile_save']);
 Route::get('/list', [CandidateProfileController::class, 'profile_list']);
 Route::post('/shopify/webhook/order', [ShopifyWebhookController::class, 'handleOrderWebhook']);
+// Route::post('/shopify/webhook/order/test', [ShopifyWebhookController::class, 'handleOrderWebhook']);

@@ -8,36 +8,45 @@ use Illuminate\Support\Facades\Hash;
 
 class ShopifyWebhookController extends Controller
 {
-    /**
-     * Handle Shopify Order Webhook
-     *
-     * @param  Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function handleOrderWebhook(Request $request)
-    {
-        // Shopify sends the data as JSON, decode it
-        $orderData = $request->getContent();
+
+    // public function handleOrderWebhook(Request $request)
+    // {
+    //     // Log the raw request data
+    //     $orderData = $request->getContent();  // Get raw JSON data
         
-        // Shopify includes the HMAC signature in the header for validation
-        $shopifyHmac = $request->header('X-Shopify-Hmac-Sha256');
-        $shopifySecret = env('1f25d5b780924fa3e540395d76c5b2f568235f30fbb92b4d2514dfc7ee053051');  // Make sure to add your secret in .env file
+    //     // Log the incoming order data
+    //     Log::info('Received Order Webhook:', ['order_data' => json_decode($orderData, true)]);
 
-        // Verify the HMAC signature to ensure the request is from Shopify
-        $calculatedHmac = base64_encode(hash_hmac('sha256', $orderData, $shopifySecret, true));
+    //     // Respond back with a success message
+    //     return response()->json(['status' => 'success', 'message' => 'Webhook received']);
+    // }
 
-        // Check if the HMAC matches
-        if (Hash::check($calculatedHmac, $shopifyHmac)) {
-            // Process the order data (save to database, etc.)
-            Log::info('Shopify Order Webhook Received:', $orderData);
+    
+public function handleOrderWebhook(Request $request)
+{
+    // Shopify sends the data as JSON, decode it
+    $orderData = $request->getContent(); // This will give raw JSON data
 
-            // Optionally, you can save the order data to the database
-            // Example: Order::create($orderData);
-            
-            return response()->json(['status' => 'success']);
-        } else {
-            Log::warning('Shopify Webhook HMAC Validation Failed');
-            return response()->json(['status' => 'error', 'message' => 'Invalid HMAC signature'], 400);
-        }
+    // Shopify includes the HMAC signature in the header for validation
+    $shopifyHmac = $request->header('X-Shopify-Hmac-Sha256');
+    $shopifySecret = env('SHOPIFY_SECRET');  // Store your secret key in .env file
+
+    // Verify the HMAC signature to ensure the request is from Shopify
+    $calculatedHmac = base64_encode(hash_hmac('sha256', $orderData, $shopifySecret, true));
+
+    // Check if the HMAC matches
+    if (hash_equals($calculatedHmac, $shopifyHmac)) {
+        // Log the order data as it is valid
+        Log::info('Shopify Order Webhook Received:', ['order_data' => json_decode($orderData, true)]);
+        
+        // You can also save the order data to the database or take other actions
+        // Example: Order::create($orderData);
+
+        return response()->json(['status' => 'success']);
+    } else {
+        Log::warning('Shopify Webhook HMAC Validation Failed');
+        return response()->json(['status' => 'error', 'message' => 'Invalid HMAC signature'], 400);
     }
+}
+
 }
