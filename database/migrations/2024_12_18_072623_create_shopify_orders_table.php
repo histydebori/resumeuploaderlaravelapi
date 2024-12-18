@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('contact_email');
             $table->timestamp('created_ats')->nullable();
             $table->string('currency');
-            $table->decimal('current_total_price', 8, 2);
-            $table->decimal('current_total_tax', 8, 2);
+            $table->string('current_total_price', 8, 2);
+            $table->string('current_total_tax', 8, 2);
             $table->string('customer_locale');
             $table->string('email');
             $table->string('financial_status');
@@ -32,12 +32,12 @@ return new class extends Migration
             $table->timestamp('processed_at')->nullable();
             $table->string('source_name');
             $table->string('tags');
-            $table->decimal('total_discounts', 8, 2);
-            $table->decimal('total_price', 8, 2);
-            $table->decimal('total_shipping_price', 8, 2);
-            $table->decimal('total_tax', 8, 2);
-            $table->decimal('total_tip_received', 8, 2);
-            $table->decimal('total_weight', 8, 2);
+            $table->string('total_discounts', 8, 2);
+            $table->string('total_price', 8, 2);
+            $table->string('total_shipping_price', 8, 2);
+            $table->string('total_tax', 8, 2);
+            $table->string('total_tip_received', 8, 2);
+            $table->string('total_weight', 8, 2);
             $table->timestamp('updated_ats')->nullable();
 
             // Add customer information (e.g., customer name, address)
