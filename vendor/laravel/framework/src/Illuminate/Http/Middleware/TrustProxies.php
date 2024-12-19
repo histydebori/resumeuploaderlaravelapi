@@ -10,7 +10,7 @@ class TrustProxies
     /**
      * The trusted proxies for the application.
      *
-     * @var array|string|null
+     * @var array<int, string>|string|null
      */
     protected $proxies;
 
@@ -48,6 +48,12 @@ class TrustProxies
     protected function setTrustedProxyIpAddresses(Request $request)
     {
         $trustedIps = $this->proxies() ?: config('trustedproxy.proxies');
+
+        if (is_null($trustedIps) &&
+            (($_ENV['LARAVEL_CLOUD'] ?? false) === '1' ||
+            ($_SERVER['LARAVEL_CLOUD'] ?? false) === '1')) {
+            $trustedIps = '*';
+        }
 
         if ($trustedIps === '*' || $trustedIps === '**') {
             return $this->setTrustedProxyIpAddressesToTheCallingIp($request);
