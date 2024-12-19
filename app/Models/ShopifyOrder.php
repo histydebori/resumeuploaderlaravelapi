@@ -10,34 +10,12 @@ class ShopifyOrder extends Model
     use HasFactory;
     protected $fillable = [
         'shopify_order_id',
-        'admin_graphql_api_id',
-        'buyer_accepts_marketing',
-        'cancel_reason',
-        'cancelled_at',
+        
         'contact_email',
         'created_ats',
-        'currency',
-        'current_total_price',
-        'current_total_tax',
-        'customer_locale',
-        'email',
-        'financial_status',
-        'fulfillment_status',
+        
         'name',
         'order_number',
-        'payment_gateway_names',
-        'phone',
-        'presentment_currency',
-        'processed_at',
-        'source_name',
-        'tags',
-        'total_discounts',
-        'total_price',
-        'total_shipping_price',
-        'total_tax',
-        'total_tip_received',
-        'total_weight',
-        'updated_ats',
         'customer_first_name',
         'customer_last_name',
         'customer_email',
@@ -52,8 +30,6 @@ class ShopifyOrder extends Model
 
     protected $casts = [
         'created_ats' => 'datetime',
-        'cancelled_at' => 'datetime',
-        'processed_at' => 'datetime',
-        'updated_ats' => 'datetime',
+    
     ];
 }
