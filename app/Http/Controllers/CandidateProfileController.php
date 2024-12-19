@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CandidateProfile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+
 
 class CandidateProfileController extends Controller
 {
@@ -42,6 +44,8 @@ class CandidateProfileController extends Controller
             $url = Storage::url($candidate->pimage);
             $candidate->imgpath = $url;
         }
+
+        Log::info('rec'); 	
         return response([
             'candidates'=>$candidates
         ], 200);

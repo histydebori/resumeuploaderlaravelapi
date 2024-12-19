@@ -1,0 +1,73 @@
+[1mdiff --cc vendor/composer/autoload_psr4.php[m
+[1mindex 5bb9cf9,4817797..0000000[m
+[1m--- a/vendor/composer/autoload_psr4.php[m
+[1m+++ b/vendor/composer/autoload_psr4.php[m
+[36m@@@ -7,14 -7,12 +7,14 @@@[m [m$baseDir = dirname($vendorDir)[m
+  [m
+  return array([m
+      'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),[m
+[31m-     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),[m
+[32m +    'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),[m
+      'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),[m
+      'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),[m
+[32m +    'Tests\\' => array($baseDir . '/tests'),[m
+[31m-     'Symfony\\Polyfill\\Php81\\' => array($vendorDir . '/symfony/polyfill-php81'),[m
+[32m+     'Termwind\\' => array($vendorDir . '/nunomaduro/termwind/src'),[m
+[32m+     'Symfony\\Polyfill\\Uuid\\' => array($vendorDir . '/symfony/polyfill-uuid'),[m
+[32m+     'Symfony\\Polyfill\\Php83\\' => array($vendorDir . '/symfony/polyfill-php83'),[m
+      'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),[m
+[31m-     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),[m
+      'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),[m
+      'Symfony\\Polyfill\\Intl\\Normalizer\\' => array($vendorDir . '/symfony/polyfill-intl-normalizer'),[m
+      'Symfony\\Polyfill\\Intl\\Idn\\' => array($vendorDir . '/symfony/polyfill-intl-idn'),[m
+[36m@@@ -23,7 -21,8 +23,9 @@@[m
+      'Symfony\\Contracts\\Translation\\' => array($vendorDir . '/symfony/translation-contracts'),[m
+      'Symfony\\Contracts\\Service\\' => array($vendorDir . '/symfony/service-contracts'),[m
+      'Symfony\\Contracts\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher-contracts'),[m
+[32m++    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),[m
+      'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),[m
+[32m+     'Symfony\\Component\\Uid\\' => array($vendorDir . '/symfony/uid'),[m
+      'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),[m
+      'Symfony\\Component\\String\\' => array($vendorDir . '/symfony/string'),[m
+      'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),[m
+[36m@@@ -50,35 -45,31 +52,37 @@@[m
+      'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),[m
+      'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),[m
+      'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),[m
+[31m-     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),[m
+[32m+     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),[m
+      'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),[m
+      'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),[m
+[32m +    'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),[m
+      'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),[m
+[32m++    'Mockery\\' => array($vendorDir . '/mockery/mockery/library/Mockery'),[m
+      'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),[m
+[32m+     'League\\Flysystem\\Local\\' => array($vendorDir . '/league/flysystem-local'),[m
+      'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),[m
+      'League\\Config\\' => array($vendorDir . '/league/config/src'),[m
+      'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),[m
+      'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),[m
+      'Laravel\\SerializableClosure\\' => array($vendorDir . '/laravel/serializable-closure/src'),[m
+      'Laravel\\Sanctum\\' => array($vendorDir . '/laravel/sanctum/src'),[m
+[32m +    'Laravel\\Sail\\' => array($vendorDir . '/laravel/sail/src'),[m
+      'Illuminate\\Support\\' => array($vendorDir . '/laravel/framework/src/Illuminate/Macroable', $vendorDir . '/laravel/framework/src/Illuminate/Collections', $vendorDir . '/laravel/framework/src/Illuminate/Conditionable'),[m
+      'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),[m
+[32m+     'GuzzleHttp\\UriTemplate\\' => array($vendorDir . '/guzzlehttp/uri-template/src'),[m
+      'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),[m
+      'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),[m
+      'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),[m
+      'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),[m
+      'Fruitcake\\Cors\\' => array($vendorDir . '/fruitcake/php-cors/src'),[m
+[32m +    'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),[m
+[31m-     'Facade\\IgnitionContracts\\' => array($vendorDir . '/facade/ignition-contracts/src'),[m
+      'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),[m
+      'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),[m
+[32m +    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),[m
+      'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),[m
+[31m-     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),[m
+[32m+     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/src'),[m
+      'Dflydev\\DotAccessData\\' => array($vendorDir . '/dflydev/dot-access-data/src'),[m
+[32m +    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),[m
+      'Database\\Seeders\\' => array($baseDir . '/database/seeders'),[m
+      'Database\\Factories\\' => array($baseDir . '/database/factories'),[m
+      'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),[m

@@ -11,11 +11,11 @@ return new class extends Migration
         Schema::create('shopify_orders', function (Blueprint $table) {
             $table->id();
             $table->string('shopify_order_id');
-            $table->string('admin_graphql_api_id');
-            $table->boolean('buyer_accepts_marketing')->default(false);
-            $table->string('cancel_reason')->nullable();
-            $table->timestamp('cancelled_at')->nullable();
+          
+            
             $table->string('contact_email');
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             $table->timestamp('created_ats')->nullable();
             $table->string('currency');
             $table->string('current_total_price', 8, 2);
@@ -53,6 +53,20 @@ return new class extends Migration
             $table->string('shipping_zip');
             $table->string('shipping_province');
             $table->string('shipping_country');
+=======
+           $table->timestamp('created_ats')->nullable();
+            
+            $table->string('name')->nullable();
+            $table->string('order_number');
+           
+>>>>>>> Stashed changes
+=======
+           $table->timestamp('created_ats')->nullable();
+            
+            $table->string('name')->nullable();
+            $table->string('order_number');
+           
+>>>>>>> Stashed changes
 
             $table->timestamps();
         });

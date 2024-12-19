@@ -14,6 +14,8 @@ class ShopifyOrder extends Model
         'contact_email',
         'created_ats',
         
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         'name',
         'order_number',
         'customer_first_name',
@@ -26,10 +28,36 @@ class ShopifyOrder extends Model
         'shipping_zip',
         'shipping_province',
         'shipping_country'
+=======
+     
+        'name',
+        'order_number',
+       
+      
+    
+>>>>>>> Stashed changes
+=======
+     
+        'name',
+        'order_number',
+       
+      
+    
+>>>>>>> Stashed changes
     ];
 
     protected $casts = [
         'created_ats' => 'datetime',
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
+=======
+       
+      
+>>>>>>> Stashed changes
+=======
+       
+      
+>>>>>>> Stashed changes
     ];
 }
