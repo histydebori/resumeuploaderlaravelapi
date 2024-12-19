@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class ShopifyWebhookController extends Controller
 {
+    //test
+
 
     // public function handleOrderWebhook(Request $request)
     // {
@@ -100,34 +102,13 @@ public function handleOrderWebhook(Request $request)
 
         ShopifyOrder::create([
             'shopify_order_id' => $orderDataArray['id'],
-            'admin_graphql_api_id' => $orderDataArray['admin_graphql_api_id'],
-            'buyer_accepts_marketing' => $orderDataArray['buyer_accepts_marketing'],
-            'cancel_reason' => $orderDataArray['cancel_reason'],
-            'cancelled_at' => $orderDataArray['cancelled_at'],
+           
             'contact_email' => $orderDataArray['contact_email'],
-            'created_at' => $orderDataArray['created_at'],
-            'currency' => $orderDataArray['currency'],
-            'current_total_price' => $orderDataArray['current_total_price'],
-            'current_total_tax' => $orderDataArray['current_total_tax'],
-            'customer_locale' => $orderDataArray['customer_locale'],
-            'email' => $orderDataArray['email'],
-            'financial_status' => $orderDataArray['financial_status'],
-            'fulfillment_status' => $orderDataArray['fulfillment_status'],
+            'created_ats' => $orderDataArray['created_at'],
+            
             'name' => $orderDataArray['name'],
             'order_number' => $orderDataArray['order_number'],
-            'payment_gateway_names' => implode(', ', $orderDataArray['payment_gateway_names']),
-            'phone' => $orderDataArray['phone'],
-            'presentment_currency' => $orderDataArray['presentment_currency'],
-            'processed_at' => $orderDataArray['processed_at'],
-            'source_name' => $orderDataArray['source_name'],
-            'tags' => $orderDataArray['tags'],
-            'total_discounts' => $orderDataArray['total_discounts'],
-            'total_price' => $orderDataArray['total_price'],
-            'total_shipping_price' => $orderDataArray['total_shipping_price'],
-            'total_tax' => $orderDataArray['total_tax'],
-            'total_tip_received' => $orderDataArray['total_tip_received'],
-            'total_weight' => $orderDataArray['total_weight'],
-            'updated_at' => $orderDataArray['updated_at'],
+          
             'customer_first_name' => $orderDataArray['customer']['first_name'],
             'customer_last_name' => $orderDataArray['customer']['last_name'],
             'customer_email' => $orderDataArray['customer']['email'],
