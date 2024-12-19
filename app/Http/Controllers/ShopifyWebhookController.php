@@ -102,9 +102,7 @@ public function handleOrderWebhook(Request $request)
 
         ShopifyOrder::create([
             'shopify_order_id' => $orderDataArray['id'],
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-           
+
             'contact_email' => $orderDataArray['contact_email'],
             'created_ats' => $orderDataArray['created_at'],
             
@@ -121,28 +119,7 @@ public function handleOrderWebhook(Request $request)
             'shipping_zip' => $orderDataArray['shipping_address']['zip'],
             'shipping_province' => $orderDataArray['shipping_address']['province'],
             'shipping_country' => $orderDataArray['shipping_address']['country'],
-=======
-          
-            'contact_email' => $orderDataArray['contact_email'],
-            'created_ats' => $orderDataArray['created_at'],
-          
-            'name' => $orderDataArray['name'],
-            'order_number' => $orderDataArray['order_number'],
-            
-           
-          
->>>>>>> Stashed changes
-=======
-          
-            'contact_email' => $orderDataArray['contact_email'],
-            'created_ats' => $orderDataArray['created_at'],
-          
-            'name' => $orderDataArray['name'],
-            'order_number' => $orderDataArray['order_number'],
-            
-           
-          
->>>>>>> Stashed changes
+
         ]);
 
 
