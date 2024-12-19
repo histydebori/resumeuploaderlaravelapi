@@ -15,6 +15,7 @@ return new class extends Migration
             
             $table->string('contact_email');
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             $table->timestamp('created_ats')->nullable();
             $table->string('currency');
             $table->string('current_total_price', 8, 2);
@@ -52,6 +53,13 @@ return new class extends Migration
             $table->string('shipping_zip');
             $table->string('shipping_province');
             $table->string('shipping_country');
+=======
+           $table->timestamp('created_ats')->nullable();
+            
+            $table->string('name')->nullable();
+            $table->string('order_number');
+           
+>>>>>>> Stashed changes
 =======
            $table->timestamp('created_ats')->nullable();
             

@@ -15,6 +15,7 @@ class ShopifyOrder extends Model
         'created_ats',
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         'name',
         'order_number',
         'customer_first_name',
@@ -35,12 +36,25 @@ class ShopifyOrder extends Model
       
     
 >>>>>>> Stashed changes
+=======
+     
+        'name',
+        'order_number',
+       
+      
+    
+>>>>>>> Stashed changes
     ];
 
     protected $casts = [
         'created_ats' => 'datetime',
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     
+=======
+       
+      
+>>>>>>> Stashed changes
 =======
        
       
