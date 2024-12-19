@@ -130,6 +130,7 @@ class ShopifyWebhookController extends Controller
 
             Log::error(message: 'first layer done');
 
+            try{
             // Convert the JSON string to an array
             $dataArray = json_decode($orderData, true);
 
@@ -262,6 +263,10 @@ class ShopifyWebhookController extends Controller
                     // }
                 }
             }
+        } catch (\Exception $e) {
+            // Handle any errors or exceptions
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
 
             Log::error('second layer done');
 
