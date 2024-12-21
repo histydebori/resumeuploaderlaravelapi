@@ -292,7 +292,7 @@ class ShopifyWebhookController extends Controller
         // Retrieve the Shopify secret key from the .env file
        // $shopifySecret = env('SHOPIFY_SECRET');  // This fetches the SHOPIFY_SECRET value from .env
        $shopifySecret = "1f25d5b780924fa3e540395d76c5b2f568235f30fbb92b4d2514dfc7ee053051";  // This fetches the SHOPIFY_SECRET value from .env
-
+//test
         // Ensure the secret key is present in the .env file
         if (empty($shopifySecret)) {
             Log::error('Shopify secret key is missing from .env');
