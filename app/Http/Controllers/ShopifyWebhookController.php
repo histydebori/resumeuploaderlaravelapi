@@ -364,27 +364,27 @@ class ShopifyWebhookController extends Controller
                     // Save the order to the database
                     $orderCreation = SpfyOrder::create($order);
             
-                    // Prepare shipping address data
-                    $shipping = [
-                        'address1' => $dataArray['shipping_address']['address1'] ?? null,
-                        'address2' => $dataArray['shipping_address']['address2'] ?? null,
-                        'city' => $dataArray['shipping_address']['city'] ?? null,
-                        'country' => $dataArray['shipping_address']['country'] ?? null,
-                        'country_code' => $dataArray['shipping_address']['country_code'] ?? null,
-                        'first_name' => $dataArray['shipping_address']['first_name'] ?? null,
-                        'last_name' => $dataArray['shipping_address']['last_name'] ?? null,
-                        'latitude' => $dataArray['shipping_address']['latitude'] ?? null,
-                        'longitude' => $dataArray['shipping_address']['longitude'] ?? null,
-                        'name' => $dataArray['shipping_address']['name'] ?? null,
-                        'phone' => $dataArray['shipping_address']['phone'] ?? null,
-                        'province' => $dataArray['shipping_address']['province'] ?? null,
-                        'province_code' => $dataArray['shipping_address']['province_code'] ?? null,
-                        'zip' => $dataArray['shipping_address']['zip'] ?? null,
-                        'spfy_order_id' => $dataArray['id']
-                    ];
+                    // // Prepare shipping address data
+                    // $shipping = [
+                    //     'address1' => $dataArray['shipping_address']['address1'] ?? null,
+                    //     'address2' => $dataArray['shipping_address']['address2'] ?? null,
+                    //     'city' => $dataArray['shipping_address']['city'] ?? null,
+                    //     'country' => $dataArray['shipping_address']['country'] ?? null,
+                    //     'country_code' => $dataArray['shipping_address']['country_code'] ?? null,
+                    //     'first_name' => $dataArray['shipping_address']['first_name'] ?? null,
+                    //     'last_name' => $dataArray['shipping_address']['last_name'] ?? null,
+                    //     'latitude' => $dataArray['shipping_address']['latitude'] ?? null,
+                    //     'longitude' => $dataArray['shipping_address']['longitude'] ?? null,
+                    //     'name' => $dataArray['shipping_address']['name'] ?? null,
+                    //     'phone' => $dataArray['shipping_address']['phone'] ?? null,
+                    //     'province' => $dataArray['shipping_address']['province'] ?? null,
+                    //     'province_code' => $dataArray['shipping_address']['province_code'] ?? null,
+                    //     'zip' => $dataArray['shipping_address']['zip'] ?? null,
+                    //     'spfy_order_id' => $dataArray['id']
+                    // ];
             
-                    // Save shipping address to the database
-                    $shippingCreation = SpfyShippingAddre::create($shipping);
+                    // // Save shipping address to the database
+                    // $shippingCreation = SpfyShippingAddre::create($shipping);
             
                     // Prepare customer data
                     $customer = [
